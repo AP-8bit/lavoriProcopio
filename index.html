@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portale dei lavori scolastici per il corso di Tecnologie per la Programmazione e Sistemi">
+    <title>Lavori Scolastici - TPS</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Aggiungi qui eventuali stili personalizzati */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Lavori Scolastici - Tecnologie per la Programmazione e Sistemi (TPS)</h1>
+        <p>Benvenuto nel portale dove troverai tutti i tuoi lavori scolastici in TPS</p>
+    </header>
+
+    <nav>
+        <a href="#progetti">Progetti</a>
+        <a href="#appunti">Appunti</a>
+        <a href="#risorse">Risorse</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
+
+    <div class="container">
+        <section id="progetti">
+            <h2 class="section-title">Progetti</h2>
+            <p>Scopri i progetti scolastici che ho sviluppato nel corso del mio percorso di studi in TPS. Ogni progetto è accompagnato da una descrizione dettagliata, codice e documentazione.</p>
+            <ul>
+                <li><a href="#">Progetto 1: Applicazione Web</a></li>
+                <li><a href="#">Progetto 2: Sistema di Gestione Database</a></li>
+                <li><a href="#">Progetto 3: Programma in Python per l'analisi dei dati</a></li>
+            </ul>
+        </section>
+
+        <section id="appunti">
+            <h2 class="section-title">Appunti</h2>
+            <p>Accedi agli appunti delle lezioni, organizzati per argomento e materia, con spiegazioni teoriche e esempi pratici.</p>
+            <ul>
+                <li><a href="#">Introduzione alla Programmazione</a></li>
+                <li><a href="#">Sistemi Operativi e Architettura del Computer</a></li>
+                <li><a href="#">Algoritmi e Strutture Dati</a></li>
+            </ul>
+        </section>
+
+        <section id="risorse">
+            <h2 class="section-title">Risorse</h2>
+            <p>Qui troverai una raccolta di risorse utili, tra cui tutorial, link a siti web, libri consigliati e software per la programmazione.</p>
+            <ul>
+                <li><a href="#">Tutorial su HTML e CSS</a></li>
+                <li><a href="#">Guida a JavaScript per Principianti</a></li>
+                <li><a href="#">Libri consigliati: Programmazione in C++</a></li>
+            </ul>
+        </section>
+
+        <section id="contatti">
+            <h2 class="section-title">Contatti</h2>
+            <p>Se hai domande o vuoi metterti in contatto con me, puoi scrivermi tramite il modulo sottostante.</p>
+            <form action="#" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="messaggio">Messaggio:</label><br>
+                <textarea id="messaggio" name="messaggio" rows="4" required></textarea><br><br>
+                <button type="submit">Invia</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Lavori Scolastici TPS - Tutti i diritti riservati</p>
+    </footer>
+
+</body>
+
+</html>
