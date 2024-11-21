@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "nome": "Mario",
+      "cognome": "Rossi",
+      "eta": 30,
+      "indirizzo": "Via Roma 12",
+      "citta": "Milano",
+      "telefoni": ["3331234567", "0223456789"],
+      "sport": ["Calcio", "Tennis"],
+      "classe": "Matematica",
+      "condominio": "A1",
+      "squadra": "Squadra A",
+      "thumb": "https://www.informatore.info/wp-content/uploads/2021/10/033155ED-6430-425F-A494-DF8EB1592762.jpeg",
+      "cv_link": "cv_mario.html"
+    },
+    {
+      "id": 2,
+      "nome": "Giulia",
+      "cognome": "Bianchi",
+      "eta": 28,
+      "indirizzo": "Via Milano 34",
+      "citta": "Torino",
+      "telefoni": ["3459876543"],
+      "sport": ["Pallavolo"],
+      "classe": "Fisica",
+      "condominio": "B3",
+      "squadra": "Squadra B",
+      "thumb": "https://img.evients.com/images/f480x480/70/80/20/bc/708020bcbd4f45d0a866e188ca6495b2.jpg",
+      "cv_link": "cv_mario.html"
+    },
+    {
+      "id": 3,
+      "nome": "Luca",
+      "cognome": "Verdi",
+      "eta": 35,
+      "indirizzo": "Corso Italia 99",
+      "citta": "Roma",
+      "telefoni": ["3891234567"],
+      "sport": ["Basket"],
+      "classe": "Chimica",
+      "condominio": "C2",
+      "squadra": "Squadra C",
+      "thumb": "",
+      "cv_link": "cv_luca.html"
+    }
+  ]
+  
