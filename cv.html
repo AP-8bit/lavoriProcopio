@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV del Soggetto</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f4f7;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        .cv-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cv-container p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        #back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        #back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CV del Soggetto</h1>
+
+    <div class="cv-container" id="cv-section">
+        <p><strong>Nome:</strong> <span id="cv-name"></span></p>
+        <p><strong>Età:</strong> <span id="cv-age"></span> anni</p>
+        <p><strong>Indirizzo:</strong> <span id="cv-address"></span></p>
+        <p><strong>Città:</strong> <span id="cv-city"></span></p>
+        <p><strong>Telefonici:</strong> <span id="cv-phones"></span></p>
+        <p><strong>Sport:</strong> <span id="cv-sports"></span></p>
+        <p><strong>Classe:</strong> <span id="cv-class"></span></p>
+        <p><strong>Condominio:</strong> <span id="cv-condominium"></span></p>
+        <p><strong>Squadra:</strong> <span id="cv-team"></span></p>
+    </div>
+
+    <a id="back-button" href="index.html">Indietro</a>
+
+    <script>
+        function loadCV() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'dati.json', true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    var subject = data.find(s => s.id == id);
+                    if (subject) {
+                        displayCV(subject);
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        function displayCV(subject) {
+            document.getElementById('cv-name').textContent = `${subject.nome} ${subject.cognome}`;
+            document.getElementById('cv-age').textContent = subject.eta;
+            document.getElementById('cv-address').textContent = subject.indirizzo;
+            document.getElementById('cv-city').textContent = subject.citta;
+            document.getElementById('cv-phones').textContent = subject.telefoni.join(', ');
+            document.getElementById('cv-sports').textContent = subject.sport.join(', ');
+            document.getElementById('cv-class').textContent = subject.classe;
+            document.getElementById('cv-condominium').textContent = subject.condominio;
+            document.getElementById('cv-team').textContent = subject.squadra;
+        }
+
+window.onload = function() {
+    loadCV();
+};
+</script>
+</body>
+</html>

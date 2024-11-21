@@ -3,80 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elenco</title>
+    <title>Elenco dei Soggetti</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
+            background-color: #f2f4f7;
+            color: #333;
         }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .subject {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 200px;
+
+        h1 {
             text-align: center;
-            padding: 15px;
+            font-size: 2.5em;
+            color: #007BFF;
+            margin-bottom: 20px;
         }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            margin-bottom: 30px;
+        }
+
+        .subject {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+            padding: 20px;
+        }
+
         .subject img {
             width: 100%;
+            height: auto;
             border-radius: 8px;
         }
+
         .subject h3 {
-            font-size: 1.2em;
-            margin: 10px 0;
+            font-size: 1.4em;
+            margin: 15px 0 10px;
+            color: #333;
         }
+
         .subject p {
-            font-size: 0.9em;
-            color: #555;
+            color: #777;
+            font-size: 0.95em;
+            margin-bottom: 10px;
         }
-        .subject a {
-            display: block;
-            margin-top: 10px;
-            text-decoration: none;
+
+        .subject button {
             background-color: #007BFF;
             color: white;
-            padding: 8px;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
             border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        .subject a:hover {
+
+        .subject button:hover {
             background-color: #0056b3;
-        }
-        #cv-section {
-            margin-top: 20px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        #cv-section h2 {
-            font-size: 1.5em;
         }
     </style>
 </head>
 <body>
-    <h1>Elenco dei Soggetti</h1>
-    <div class="container" id="subject-list"></div>
 
-    <div id="cv-section">
-        <h2>CV della Persona Selezionata</h2>
-        <p><strong>Nome:</strong> <span id="cv-name"></span></p>
-        <p><strong>Età:</strong> <span id="cv-age"></span> anni</p>
-        <p><strong>Indirizzo:</strong> <span id="cv-address"></span></p>
-        <p><strong>Città:</strong> <span id="cv-city"></span></p>
-        <p><strong>Telefonici:</strong> <span id="cv-phones"></span></p>
-        <p><strong>Sport:</strong> <span id="cv-sports"></span></p>
-        <p><strong>Classe:</strong> <span id="cv-class"></span></p>
-        <p><strong>Condominio:</strong> <span id="cv-condominium"></span></p>
-        <p><strong>Squadra:</strong> <span id="cv-team"></span></p>
-        <a id="cv-link" href="#" target="_blank">Vedi CV completo</a>
-    </div>
+    <h1>Elenco dei Soggetti</h1>
+
+    <div class="container" id="subject-list"></div>
 
     <script>
         function loadData() {
@@ -96,56 +98,31 @@
             xhr.send();
         }
 
-  
         function displaySubjects(data) {
             const subjectList = document.getElementById('subject-list');
-            subjectList.innerHTML = ''; // pulisce la lista ogni volta
+            subjectList.innerHTML = ''; 
 
             data.forEach(subject => {
                 const subjectDiv = document.createElement('div');
                 subjectDiv.classList.add('subject');
                 subjectDiv.innerHTML = `
-                    <img src="${subject.thumb}" alt="${subject.nome}">
+                    <img src="${subject.thumb}" alt="${subject.nome} ${subject.cognome}">
                     <h3>${subject.nome} ${subject.cognome}</h3>
                     <p><strong>Età:</strong> ${subject.eta} anni</p>
-                    <p><strong>Indirizzo:</strong> ${subject.indirizzo}</p>
                     <p><strong>Città:</strong> ${subject.citta}</p>
-                    <button onclick="loadCV(${subject.id})">Vedi CV</button>
+                    <button onclick="viewCV(${subject.id})">Vedi CV</button>
                 `;
                 subjectList.appendChild(subjectDiv);
             });
         }
 
-        function loadCV(id) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'dati.json', true);
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    var data = JSON.parse(xhr.responseText);
-                    var subject = data.find(s => s.id === id);
-                    if (subject) {
-                        displayCV(subject);
-                    }
-                }
-            };
-            xhr.send();
-        }
-
-        function displayCV(subject) {
-            document.getElementById('cv-name').textContent = `${subject.nome} ${subject.cognome}`;
-            document.getElementById('cv-age').textContent = subject.eta;
-            document.getElementById('cv-address').textContent = subject.indirizzo;
-            document.getElementById('cv-city').textContent = subject.citta;
-            document.getElementById('cv-phones').textContent = subject.telefoni.join(', ');
-            document.getElementById('cv-sports').textContent = subject.sport.join(', ');
-            document.getElementById('cv-class').textContent = subject.classe;
-            document.getElementById('cv-condominium').textContent = subject.condominio;
-            document.getElementById('cv-team').textContent = subject.squadra;
-            document.getElementById('cv-link').href = subject.cv_link;
+        function viewCV(id) {
+            window.location.href = `cv.html?id=${id}`;
         }
 
         loadData();
     </script>
+
 </body>
 </html>
 
