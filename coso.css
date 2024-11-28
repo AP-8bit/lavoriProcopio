@@ -1,0 +1,72 @@
+/* Reset per margini e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile di base del corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Sezione dei progetti */
+.works {
+    padding: 2rem;
+    text-align: center;
+}
+
+.works h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.works ul {
+    list-style-type: none;
+}
+
+.works li {
+    margin: 1rem 0;
+}
+
+.works a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.works a:hover {
+    color: #388E3C;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
