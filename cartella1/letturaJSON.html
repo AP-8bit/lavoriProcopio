@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Miei Dati Personali</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #fff9e6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #5a5a5a;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #ffcc80;
+            color: #5a5a5a;
+        }
+        tr:nth-child(even) {
+            background-color: #ffe0b2;
+        }
+        tr:hover {
+            background-color: #ffd54f;
+        }
+    </style>
+</head>
+<body>
+
+<h1>I Miei Dati Personali</h1>
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Età</th>
+            <th>Indirizzo</th>
+            <th>Città</th>
+            <th>Telefono 1</th>
+            <th>Telefono 2</th>
+            <th>Sport 1</th>
+            <th>Sport 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
+<script>
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('data-table').querySelector('tbody');
+            data.nomi.forEach(person => {
+                const row = document.createElement('tr');
+                const indirizzo = `${person.indirizzo.via} ${person.indirizzo.numero}`;
+                
+                row.innerHTML = `
+                    <td>${person.nome}</td>
+                    <td>${person.cognome}</td>
+                    <td>${person.età}</td>
+                    <td>${indirizzo}</td>
+                    <td>${person.città}</td>
+                    <td>${person.telefoni.telefono1}</td>
+                    <td>${person.telefoni.telefono2}</td>
+                    <td>${person.sport.sport1}</td>
+                    <td>${person.sport.sport2}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Errore nel caricamento dei dati:', error);
+        });
+</script>
+
+</body>
+</html>

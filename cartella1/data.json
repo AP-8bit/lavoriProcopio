@@ -1,0 +1,62 @@
+
+{
+	"nomi": [
+		{ 
+			"nome": "Alessandro", 
+			"cognome": "Procopio",
+			"età": 18,
+			"indirizzo": { 
+				"via": "Via Roma", 
+				"numero": 647 
+			}, 
+			"città": "Milano",
+			"telefoni": { 
+				"telefono1": "13383481348",
+				"telefono2": "13734737347"
+			},
+			"sport": { 
+				"sport1": "calcio",
+				"sport2": "basket"
+			}
+		},
+		{ 
+			"nome": "Mattia", 
+			"cognome": "Visentin",
+			"età": 17,
+			"indirizzo": { 
+				"via": "Via Milano", 
+				"numero": 560 
+			}, 
+			"città": "Milano",
+			"telefoni": { 
+				"telefono1": "13583481348",
+				"telefono2": "13734736347"
+			},
+			"sport": { 
+				"sport1": "ippica",
+				"sport2": "ping-pong"
+			}
+		},
+		{ 
+			"nome": "Riccardo", 
+			"cognome": "Scala",
+			"età": 69,
+			"indirizzo": { 
+				"via": "Via dalle Palme", 
+				"numero": 782 
+			}, 
+			"città": "Milano",
+			"telefoni": { 
+				"telefono1": "13303481348",
+				"telefono2": "0000000000"
+			},
+			"sport": { 
+				"sport1": "pallanuoto",
+				"sport2": "boxe"
+			}
+		}
+	]
+}
+
+
+
