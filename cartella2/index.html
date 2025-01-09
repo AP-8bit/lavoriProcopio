@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2><b>CALCOLATRICE</b></h2>
+
+    <script>
+        function calcola(operazione) {
+            let a = parseFloat(document.getElementById("op1").value);
+            let b = parseFloat(document.getElementById("op2").value);
+            let risultato;
+
+            switch (operazione) {
+                case 'somma':
+                    risultato = a + b;
+                    break;
+                case 'sottrazione':
+                    risultato = a - b;
+                    break;
+                case 'moltiplicazione':
+                    risultato = a * b;
+                    break;
+                case 'divisione':
+                    risultato = b !== 0 ? a / b : "Errore: divisione per zero!";
+                    break;
+                default:
+                    risultato = "Operazione non valida!";
+            }
+            document.getElementById("ris").innerHTML = risultato;
+        }
+    </script>
+
+    <table>
+        <tr>
+            <td>Operando 1:</td>
+            <td><input type="text" id="op1" size="10"></td>
+        </tr>
+        <tr>
+            <td>Operando 2:</td>
+            <td><input type="text" id="op2" size="10"></td>
+        </tr>
+        <tr>
+            <td>Risultato:</td>
+            <td id="ris"></td>
+        </tr>
+    </table>
+
+    <input type="button" value="SOMMA" onClick="calcola('somma');">
+    <input type="button" value="SOTTRAZIONE" onClick="calcola('sottrazione');">
+    <input type="button" value="MOLTIPLICAZIONE" onClick="calcola('moltiplicazione');">
+    <input type="button" value="DIVISIONE" onClick="calcola('divisione');">
+</body>
+</html>

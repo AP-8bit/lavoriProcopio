@@ -1,0 +1,27 @@
+[
+    {
+        "nome": "Mario",
+        "cognome": "Rossi",
+        "data_di_nascita": "1985-01-01",
+        "indirizzo": "Via Roma 1",
+        "città": "Milano",
+        "thund": "https://via.placeholder.com/100"
+    },
+    {
+        "nome": "Luca",
+        "cognome": "Bianchi",
+        "data_di_nascita": "1990-02-15",
+        "indirizzo": "Via Milano 2",
+        "città": "Torino",
+        "thund": "https://via.placeholder.com/100"
+    },
+    {
+        "nome": "Sara",
+        "cognome": "Verdi",
+        "data_di_nascita": "1992-03-10",
+        "indirizzo": "Via Napoli 3",
+        "città": "Napoli",
+        "thund": "https://via.placeholder.com/100"
+    }
+ 
+]

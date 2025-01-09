@@ -1,0 +1,24 @@
+[
+    {
+        "nome": "Mario",
+        "cognome": "Rossi",
+        "esperienze": "5 anni in XYZ Srl come sviluppatore.",
+        "istruzione": "Laurea in Informatica.",
+        "contatto": "mario.rossi@email.com"
+    },
+    {
+        "nome": "Luca",
+        "cognome": "Bianchi",
+        "esperienze": "3 anni in ABC Spa come designer.",
+        "istruzione": "Laurea in Design.",
+        "contatto": "luca.bianchi@email.com"
+    },
+    {
+        "nome": "Sara",
+        "cognome": "Verdi",
+        "esperienze": "4 anni in DEF Co. come project manager.",
+        "istruzione": "Laurea in Economia.",
+        "contatto": "sara.verdi@email.com"
+    }
+ 
+]
