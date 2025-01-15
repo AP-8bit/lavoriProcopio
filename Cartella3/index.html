@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Test SOAP</title>
+        <link rel="stylesheet" href="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="principale">
+
+            <h1> Convertitore Monetario </h1>
+            <form method="POST" action="do_action.php">
+                <input type="number" name="Valore" required/>
+                <select name="Valuta">
+                    <option> USD </option>
+                    <option> JPY </option>
+                    <option> GBP </option>
+                    <option> CHF </option>
+                    <option> CNY </option>
+                </select>
+                <input type="submit" value="Converti"/>
+            </form>
+        </div>
+    </body>
+</html>
