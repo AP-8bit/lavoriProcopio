@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post WordPress</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Tabella Articoli da WordPress API</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Titolo</th>
+            </tr>
+        </thead>
+        <tbody id="Visualizza"></tbody>
+    </table>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        var url = "https://seahawkmedia.com/wp-json/wp/v2/posts?search=Drupal"; // URL API WordPress
+        
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var file = JSON.parse(this.responseText);
+                var out = "";
+
+                file.forEach(function(post) {
+                    out += "<tr><td>" + post.date + "</td><td>" + post.title.rendered + "</td></tr>";
+                });
+
+                document.getElementById("Visualizza").innerHTML = out;
+            }
+        };
+
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    </script>
+
+</body>
+</html>
